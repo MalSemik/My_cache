@@ -38,7 +38,6 @@ class CacheEntry:
 
 # TODO: Polymorphism
 # TODO: Staticmethod
-# TODO: Store on github
 # TODO: Add CI (travis CI)
 # TODO: test coverage
 # TODO: github badges
