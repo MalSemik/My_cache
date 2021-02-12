@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/MalSemik/My_cache.svg?branch=main)](https://travis-ci.org/MalSemik/My_cache)
+[![Python version](https://img.shields.io/badge/Python-3.7-blue)](https://www.python.org/downloads/release/python-370/)
+[![Test](https://img.shields.io/badge/test-pytest-orange)](https://docs.pytest.org/en/stable/)
 # My_cache
 My_cache is a project to learn and better understand OOP.
 
@@ -13,7 +15,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```python
-from lesson_classes_cache import DictCache
+from my_cache.lesson_classes_cache import DictCache
 
 cache = DictCache()
 cache.cached_get("http://worldtimeapi.org/api/timezone/Europe/Warsaw").status_code

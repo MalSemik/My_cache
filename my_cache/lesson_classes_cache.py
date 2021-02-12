@@ -10,7 +10,7 @@ import requests
 # logging.basicConfig(filename='cache_logs.log',level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(name)s - %(message)s')
 logger = logging.getLogger('cache')
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler('cache.log')
+file_handler = logging.FileHandler('../cache.log')
 file_handler.setLevel(logging.DEBUG)
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.INFO)
@@ -36,12 +36,19 @@ class CacheEntry:
         self.expiration_date = expiration_date
 
 
-# TODO: Polymorphism
 # TODO: Staticmethod
-# TODO: test coverage
-# TODO: github badges
-# TODO: readme
+# TODO: codecov
 
+# jesli travis bedzie taki kiepski:
+# TODO: try circle ci
+
+# Zadanie domowe:
+# TODO: use tmp_path in all tests that create .cache file
+# TODO: Polymorphism CacheStorage, DictCacheStorage
+
+
+# Na kiedys
+# TODO: mock requests in tests
 
 class Cache(ABC):  # klasa abstrakcyjna
     @abstractmethod
