@@ -8,17 +8,21 @@ from typing import Dict
 import requests
 
 # logging.basicConfig(filename='cache_logs.log',level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(name)s - %(message)s')
-logger = logging.getLogger('cache')
-logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler('../cache.log')
-file_handler.setLevel(logging.DEBUG)
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
-file_handler.setFormatter(formatter)
-console_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
-logger.addHandler(console_handler)
+def create_logger():
+    logger = logging.getLogger('cache')
+    logger.setLevel(logging.DEBUG)
+    file_handler = logging.FileHandler('../cache.log')
+    file_handler.setLevel(logging.DEBUG)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    return logger
+
+logger=create_logger()
 
 
 # class MyEncoder(JSONEncoder):
@@ -62,24 +66,24 @@ class Cache(ABC):  # klasa abstrakcyjna
 
 ##### Wstawka od RAfala #####
 
-# class CacheStorage(ABC):
-#     @abstractmethod
-#     def add(self, url, response):
-#         pass
-#
-#     @abstractmethod
-#     def remove(self, url):
-#         pass
-#
-#     @abstractmethod
-#     def get_all(self):
-#         pass
-#
-#     @abstractmethod
-#     def is_in(self, url):
-#         pass
-#
-#
+class CacheStorage(ABC):
+    @abstractmethod
+    def add(self, url, response):
+        pass
+
+    @abstractmethod
+    def remove(self, url):
+        pass
+
+    @abstractmethod
+    def get_all(self):
+        pass
+
+    @abstractmethod
+    def is_in(self, url):
+        pass
+
+
 # class DictCacheStorage(CacheStorage):
 #     def __init__(self):
 #         self.cache = {}
